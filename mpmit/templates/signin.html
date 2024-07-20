@@ -1,0 +1,58 @@
+{% extends 'head-foot.html' %}
+
+{% block content %}
+<div class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-center text-success">SIGNIN FORM</p>
+
+                </div>
+                <div class="card-body">
+                    <form action="signin" method="post">
+                        {% csrf_token %}
+
+
+                    <div class="form-group">
+                        <label for="username">ENTER USERNAME </label>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="ENTER USERNAME" required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="password">ENTER PASSWORD</label>
+                        <input type="password" class="form-control" name="password" id="email" placeholder="ENTER PASSWORD" required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="signin">
+                    </div>
+                    </form>
+                    {% for msg in messages %}
+                        {{ msg }}
+                    {% endfor %}
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

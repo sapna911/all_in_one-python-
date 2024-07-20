@@ -1,0 +1,15 @@
+from tkinter import *
+root=Tk()
+root.title('scroll bar')
+f=Frame(root)
+l=Listbox(root)
+scroll=Scrollbar(f)
+scroll.pack(side=RIGHT,fill=Y)
+l=Listbox(f,yscrollcommand=scroll.set)
+for i in range(1,150):
+    l.insert(END,'LISData'+str(i))
+l.pack(side=LEFT)
+scroll.config(command=l.yview)
+f.pack()
+root.geometry('500x500+150+120')
+root.mainloop()

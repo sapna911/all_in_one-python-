@@ -1,0 +1,47 @@
+{% extends 'head-foot.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-center text-success">STUDENT REGISTRATION FORM</p>
+
+                </div>
+                <div class="card-body">
+                    <form action="addstudentData" method="post">
+                        {% csrf_token %}
+<!--                                {{ form.student_id }}-->
+<!--                               {{ form.name }}-->
+
+<!--                         {{ form.email}}-->
+<!--                         {{ form.gender }}-->
+
+                        {{ form|crispy }}
+
+
+
+
+
+
+
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="SAVE DATA">
+                    </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

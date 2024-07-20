@@ -1,0 +1,79 @@
+{% extends 'head-foot.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-center text-success">SIGNUP FORM</p>
+
+                </div>
+                <div class="card-body">
+                    <form action="register" method="post">
+                        {% csrf_token %}
+                    <div class="form-group">
+                        <label for="first_name">ENTER FIRST NAME</label>
+                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="ENTER FIRST NAME" required>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last_name">ENTER LAST NAME</label>
+                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="ENTER LAST NAME" required>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">ENTER USERNAME </label>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="ENTER USERNAME" required>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">ENTER EMAIL</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="ENTER EMAIL" required>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">ENTER PASSWORD</label>
+                        <input type="password" class="form-control" name="password" id="email" placeholder="ENTER PASSWORD" required>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpassword">ENTER PASSWORD AGAIN</label>
+                        <input type="cpassword" class="form-control" name="cpassword" id="email" placeholder="ENTER PASSWORD AGAIN" required>
+
+
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="register">
+                    </div>
+                    </form>
+                    {% for msg in messages %}
+                        {{ msg }}
+                    {% endfor %}
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
